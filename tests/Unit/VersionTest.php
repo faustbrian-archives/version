@@ -56,6 +56,7 @@ class VersionTest extends TestCase
     /** @test */
     public function it_cat_determine_the_type_of_difference_between_two_versions(): void
     {
+        $this->assertNull(Version::diff('1.0.0', '1.0.0'));
         $this->assertSame('major', Version::diff('1.0.0', '2.0.0'));
         $this->assertSame('minor', Version::diff('1.0.0', '1.1.0'));
         $this->assertSame('patch', Version::diff('1.0.0', '1.0.1'));

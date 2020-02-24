@@ -42,6 +42,7 @@ class VersionTest extends TestCase
     /** @test */
     public function it_cat_determine_the_stability(): void
     {
+        $this->assertNull(Version::parse('1.2.3')->getStability());
         $this->assertSame('alpha', Version::parse('1.2.3-alpha.1')->getStability());
     }
 
